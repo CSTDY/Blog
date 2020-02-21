@@ -1,2 +1,2 @@
 # Blog
-Create folder named "Blog" and add all of tehe files to it
+Create folder named "Blog" and add all of these files to it
