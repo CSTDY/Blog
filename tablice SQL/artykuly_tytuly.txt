@@ -1,0 +1,9 @@
+CREATE TABLE artykuly_tytuly (
+    id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    artykul_id int(11) NOT NULL UNIQUE,
+    tytul_id int(11) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+INSERT INTO `artykuly_tytuly` (`id`, `artykul_id`, `tytul_id`) VALUES
+(1, 1, 1),
+(2, 2, 2)

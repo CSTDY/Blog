@@ -1,0 +1,56 @@
+CREATE TABLE `uzytkownicy` (
+  `id` int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  `uzytkownik` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `rola` enum('Author','Admin') DEFAULT NULL,
+  `pass` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `uzytkownicy` (`id`, `uzytkownik`, `email`, `rola`, `pass`, `created_at`, `updated_at`) VALUES
+(1, 'Awa', 'info@codewithawa.com', 'Admin', 'mypassword', '2018-01-08 12:52:58', '2018-01-08 12:52:58')
+
+CREATE TABLE tytule (
+	id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nazwa varchar(255) NOT NULL,
+    slug varchar(255) NOT NULL UNIQUE
+)ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+INSERT INTO `tytuly` (`id`, `nazwa`, `slug`) VALUES
+(1, 'Systemy operacyjne', 'systemy-operacyjne'),
+(2, 'Programowanie', 'programowanie'),
+(3, 'Matematyka', 'matematyka'),
+(4, 'Bazy danych', 'bazy-danych'),
+(5, 'Elektronika', 'elektronika')
+
+CREATE TABLE `artykuly` (
+ `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ `uzytkownik_id` int(11) DEFAULT NULL,
+ `tytul` varchar(255) NOT NULL,
+ `slug` varchar(255) NOT NULL UNIQUE,
+ `views` int(11) NOT NULL DEFAULT '0',
+ `image` varchar(255) NOT NULL,
+ `body` text NOT NULL,
+ `published` tinyint(1) NOT NULL,
+ `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+INSERT INTO `artykuly` (`id`, `uzytkownik_id`, `tytul`, `slug`, `views`, `image`, `body`, `published`, `created_at`, `updated_at`) VALUES
+(1, 1, '5 Habits that can improve your life', '5-habits-that-can-improve-your-life', 0, 'banner.jpg', 'Read every day', 1, '2018-02-03 07:58:02', '2018-02-01 19:14:31'),
+(2, 1, 'Second post on LifeBlog', 'second-post-on-lifeblog', 0, 'banner.jpg', 'This is the body of the second post on this site', 0, '2018-02-02 11:40:14', '2018-02-01 13:04:36')
+
+CREATE TABLE artykuly_tytuly (
+    id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    artykul_id int(11) NOT NULL UNIQUE,
+    tytul_id int(11) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+INSERT INTO `artykuly_tytuly` (`id`, `artykul_id`, `tytul_id`) VALUES
+(1, 1, 1),
+(2, 2, 2)
+
+

@@ -1,0 +1,22 @@
+form button { margin: 5px 0px; }
+
+textarea { display: block; margin-bottom: 10px; }
+
+.comments-section { margin-top: 10px; border: 1px solid #ccc; }
+
+.comment { margin-bottom: 10px; }
+.comment .comment-name { font-weight: bold; }
+.comment .comment-date {
+	font-style: italic;
+	font-size: 0.8em;
+}
+.comment .reply-btn, .edit-btn { font-size: 0.8em; }
+.comment-details { width: 91.5%; float: left; }
+.comment-details p { margin-bottom: 0px; }
+/*replies*/
+.reply { margin-left: 30px; }
+.reply_form {
+	margin-left: 40px;
+	display: none;
+}
+#comment_form { margin-top: 10px; }

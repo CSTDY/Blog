@@ -1,0 +1,100 @@
+* {margin: 0px; padding: 0px;}
+
+html {
+    box-sizing: border-box;
+    font-style: oblique;
+}
+
+body {
+    position: relative;
+    padding-bottom: 8rem;
+    min-height: 100%;
+    background-image: linear-gradient(260deg, rgba(253, 254, 255, 0.993) 0%, rgba(245, 244, 247, 0.884));
+    font-size:20px;
+
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.wrapper {
+    max-width: 1000px;
+    background-color: #eee;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+.redirect {
+    font-family: 'Averia Serif Libre', cursive;
+    text-decoration: none;
+    display: block;
+    margin: 0 0 5% 2%;
+    color: rgba(151, 193, 228, 0.815);
+}
+
+.baner {
+    margin: 7px auto;
+    min-height: 400px;
+    color: rgba(148, 224, 238, 0.932);
+    border-radius: 5px;
+    background-image: url('../obrazy/banner.jpg');
+    background-size: 100% 100%;
+}
+
+form {
+    margin-left: 20%;
+}
+
+form input {
+    padding: 15px 15px;
+    font-size: 1rem;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background: transparent;
+    border: 1px solid #3E606F;
+}
+
+.btn {
+    color: white;
+	background: #4E6166;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+	display: block;
+	letter-spacing: .1em;
+	margin: 10px 0px;
+	padding: 13px 20px;
+	text-decoration: none;
+}
+
+.btn:hover {
+    background: #4E6575;
+    cursor: pointer;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+p {
+    font-family: 'Averia Serif Libre', serif;
+}
+
+/* FOOTER */
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: white;
+    background-color: #73707D;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto 0px;
+    padding: 20px 0px;
+  }
+
+#error {
+    color: #f11;
+}

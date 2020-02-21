@@ -1,0 +1,12 @@
+CREATE TABLE tytule (
+	id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nazwa varchar(255) NOT NULL,
+    slug varchar(255) NOT NULL UNIQUE
+)ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+INSERT INTO `tytuly` (`id`, `nazwa`, `slug`) VALUES
+(1, 'Systemy operacyjne', 'systemy-operacyjne'),
+(2, 'Programowanie', 'programowanie'),
+(3, 'Matematyka', 'matematyka'),
+(4, 'Bazy danych', 'bazy-danych'),
+(5, 'Elektronika', 'elektronika')

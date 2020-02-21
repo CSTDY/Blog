@@ -1,0 +1,12 @@
+CREATE TABLE `uzytkownicy` (
+  `id` int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  `uzytkownik` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `rola` enum('Author','Admin') DEFAULT NULL,
+  `pass` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `uzytkownicy` (`id`, `uzytkownik`, `email`, `rola`, `pass`, `created_at`, `updated_at`) VALUES
+(1, 'Awa', 'info@codewithawa.com', 'Admin', 'mypassword', '2018-01-08 12:52:58', '2018-01-08 12:52:58')
